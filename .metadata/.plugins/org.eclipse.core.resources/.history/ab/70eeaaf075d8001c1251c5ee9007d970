@@ -1,0 +1,27 @@
+package EJ01_Create_Destroy_Object.static_factory_methods;
+
+public class NutritionFacts {
+	private final int servingSize;
+	private final int servings;
+	private final int calories;
+	private final int fat;
+	private final int sodium;
+	private final int carbohydrate;
+	
+	public static class Builder {
+		// 필수 매개변수
+		private final int servingSize;
+		private final int servings;
+		
+		// 선택적 매개변수 - 기본값으로 초기화한다.
+		private int calories = 0;
+		private int fat = 0;
+		private int sodium = 0;
+		private int carbohydrate = 0;
+		
+		public Builder(int servingSize, int servings) {
+			this.servingSize = servingSize;
+			this.servings = servings;
+		}
+	}
+}

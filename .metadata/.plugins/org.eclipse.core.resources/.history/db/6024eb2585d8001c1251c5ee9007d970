@@ -1,0 +1,43 @@
+package EJ01_Create_Destroy_Object.static_factory_methods;
+
+import java.util.EnumSet;
+import java.util.Objects;
+import java.util.Set;
+
+// 계층적으로 설계된 클래스와 잘 어우리는 빌더 패턴 
+public abstract class Pizza {
+	
+	public enum Topping {
+		HAM, MUSHROOM, ONION, PEPPER, SAUSAGE
+	}
+	
+	final Set<Topping> toppings;
+	
+	// 해당 Builder를 상속하 클래스가 Builder 클래스를 여러 형태의 데이터 타입으로 정의할 수 있도록 
+	// abstract로 추상화 하였고, 
+	// T로 타입에 대한 형변환 부담을 없애놓았다. 
+	abstract static class Builder<T extends Builder<T>> {
+		
+		EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class);
+		
+		public T addTopping(Topping topping) {
+			toppings.add(Objects.requireNonNull(topping));
+			return self();
+		}
+		
+		// build와 self 메서드는 override를 허용하고자 abstract 메서드로 남겨놓았다. 
+		abstract Pizza build();
+		
+		// 하위 클래스는 이 메서드를 재정의(Overriding)하여 "this"를 반환하도록 해야 한다. 
+		protected abstract T self();
+	}
+	
+	Pizza(Builder<?> builder) {
+		toppings = builder.toppings.clone(); // shallow copy를 통해 builder에서 생성한 값으로 Pizza 객체를 초기화한다. 
+	}
+
+	public Set<Topping> getToppings() {
+		return toppings;
+	}
+	
+}

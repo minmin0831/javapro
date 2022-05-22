@@ -1,0 +1,59 @@
+package data_structure;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Geo {
+	// create instance by Builder object
+	private final double latitude;
+	private final double longitude;
+	
+	public static class Builder {
+		private final double latitude;
+		private final double longitude;
+		
+		public Builder(double latitude, double longitude) {
+			this.latitude = latitude;
+			this.longitude = longitude;
+		}
+		
+		public Geo build() {
+			return new Geo(this);
+		}
+	}
+	
+	private Geo(Builder builder) {
+		latitude = builder.latitude;
+		longitude = builder.longitude;
+	}
+	
+	// Getters (No Setters due to final member variables)
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+	
+	// factory
+	public static void showGeoByObj(Geo ...goose) {
+		for(Geo gg:goose) {
+			System.out.printf("showGeoByObj: latitude: %f, longitude: %f \n", gg.getLatitude(), gg.getLongitude());
+		}
+	}
+	
+	public static void showGeoByHashMap(HashMap<String, Geo> cities, String[] keyArray) {
+		System.out.println("method call success");
+		for(int i=0; i<goose.size(); i++) {
+			System.out.printf("showGeoByHashMap: latitude: %f, longitude: %f \n", goose.get(i).getLatitude(), goose.get(i).getLongitude());
+		}
+	}
+	
+	public static void showGeoByArrayList(ArrayList<Geo> goose) {
+		for(int i=0; i<goose.size(); i++) {
+			System.out.printf("showGeoByArrayList: latitude: %f, longitude: %f \n", goose.get(i).getLatitude(), goose.get(i).getLongitude());
+		}
+	}
+	
+}

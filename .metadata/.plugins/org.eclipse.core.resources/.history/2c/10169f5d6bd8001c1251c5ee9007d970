@@ -1,0 +1,5 @@
+package EJ01_Create_Destroy_Object.static_factory_methods;
+
+public class User {
+
+}

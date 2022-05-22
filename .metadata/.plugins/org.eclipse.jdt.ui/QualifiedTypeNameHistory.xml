@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.awt.Toolkit"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.time.Instant"/>
+    <fullyQualifiedTypeName name="java.lang.System.Logger"/>
+    <fullyQualifiedTypeName name="java.util.logging.Logger"/>
+    <fullyQualifiedTypeName name="java.util.logging.Level"/>
+    <fullyQualifiedTypeName name="java.time.LocalTime"/>
+    <fullyQualifiedTypeName name="EJ01_Create_Destroy_Object.static_factory_methods.NutritionFacts.Builder"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.EnumSet"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="EJ01_Create_Destroy_Object.static_factory_methods.Pizza.Builder"/>
+    <fullyQualifiedTypeName name="EJ01_Create_Destroy_Object.static_factory_methods.PizzaNy.Builder"/>
+    <fullyQualifiedTypeName name="EJ01_Create_Destroy_Object.static_factory_methods.PizzaNy.Size"/>
+    <fullyQualifiedTypeName name="EJ01_Create_Destroy_Object.static_factory_methods.Pizza.Topping"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,60 @@
+package ProblemSolving;
+
+import java.util.Arrays;
+import java.util.Hashtable;
+
+/*
+ * source: https://leetcode.com/problems/roman-to-integer/
+ * */
+
+public class RomanToInteger {
+	
+	static Hashtable<String, Integer> hashtable = new Hashtable<>();
+	
+	public static void main(String[] args) {
+		
+		hashtable.put("I", 1);
+		hashtable.put("IV", 4); // I
+		hashtable.put("V", 5);
+		hashtable.put("IX", 9); // I
+		hashtable.put("X", 10);
+		hashtable.put("XL", 40); // X
+		hashtable.put("L", 50);
+		hashtable.put("XC", 90); // X
+		hashtable.put("C", 100);
+		hashtable.put("CD", 400); // C
+		hashtable.put("D", 500);
+		hashtable.put("CM", 900); // C
+		hashtable.put("M", 1000);
+		
+		romanToInt("CIV");
+	}
+	
+	static public int romanToInt(String s) {
+		String str = s;
+//		System.out.println(str.length());
+		String[] arrStr = new String[str.length()]; // store char or string to indexes of arrStr array
+		String cur;
+		String next;
+		
+		for(int i=0; i<arrStr.length; i++) {
+			cur = Character.toString(str.charAt(i)); 
+			for(int j=1; j<arrStr.length; j++) {
+				next = Character.toString(str.charAt(j));
+				
+				if(cur.equals("I")) {
+					if(next.equals("V")) {
+						String merged = "I" + "V";
+						arrStr[i] = merged;
+					}
+					arrStr[i] = cur; 
+				}	
+				arrStr[i] = cur;
+			}			
+		}
+		
+		System.out.println(Arrays.toString(arrStr));		
+		return 1;
+	}
+
+}

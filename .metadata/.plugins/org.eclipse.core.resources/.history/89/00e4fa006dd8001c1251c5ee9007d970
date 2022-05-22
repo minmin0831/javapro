@@ -1,0 +1,38 @@
+package EJ01_Create_Destroy_Object.static_factory_methods;
+
+import java.lang.System.Logger;
+
+public class User {
+	private final String name;
+	private final String email;
+	private final String country;
+	
+	public User(String name, String email, String country) {
+		private static final Logger LOGGER = Logger.getLogger(User.class.getName());
+		this.name = name;
+		this.email = email;
+		this.country = country;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public String getCountry() {
+		return country;
+	}
+
+
+
+	public static User createWithDefaultCountry(String name, String email) {
+		return new User(name, email, "South Korea");
+	}
+}

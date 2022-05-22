@@ -1,0 +1,22 @@
+package EJ01_Create_Destroy_Object.static_factory_methods;
+
+import EJ01_Create_Destroy_Object.static_factory_methods.Pizza.Topping;
+import EJ01_Create_Destroy_Object.static_factory_methods.PizzaNy.Size;
+
+public class PizzaEx {
+
+	private static final Size SMALL = SMALL;
+	private static final Topping SAUSAGE = SAUSAGE;
+	private static final Topping ONION = ONION;
+	private static final Topping HAM = HAM;
+	
+
+	public static void main(String[] args) {
+		PizzaNy NyPizza = new PizzaNy.Builder(SMALL)
+				.addTopping(SAUSAGE).addTopping(ONION).build();
+		
+		PizzaCalzone CalzonePizza = new PizzaCalzone.Builder()
+				.addTopping(HAM).sauceInside().build();
+	}
+
+}

@@ -1,0 +1,34 @@
+package EJ01_Create_Destroy_Object.static_factory_methods;
+
+// Pizza의 하위 클래
+public class PizzaNy extends Pizza {
+	
+	public enum Size {
+		SMALL, MIDIUM, LARGE
+	}
+	
+	private final Size size;
+	
+	public static class Builder extends Pizza.Builder<Builder> {
+		
+		private final Size size;
+		
+		public Builder(Size size) {
+			this.size = Object.requireNonNull(size);
+		}
+		
+		@Override public PizzaNy build() {
+			return new PizzaNy(this);
+		}
+		
+		@Override protected Builder self() {
+			return this;
+		}
+	}
+	
+	private PizzaNy(Builder builder) {
+		super(builder);
+		size = builder.size;
+	}
+	
+}

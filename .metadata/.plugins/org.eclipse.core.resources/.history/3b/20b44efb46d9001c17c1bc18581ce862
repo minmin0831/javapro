@@ -1,0 +1,40 @@
+package data_structure;
+
+public class Geo {
+	private final double latitude;
+	private final double longitude;
+	
+	public static class Builder {
+		private final double latitude;
+		private final double longitude;
+		
+		public Builder(double latitude, double longitude) {
+			this.latitude = latitude;
+			this.longitude = longitude;
+		}
+		
+		public Geo build() {
+			return new Geo(this);
+		}
+	}
+	
+	private Geo(Builder builder) {
+		latitude = builder.latitude;
+		longitude = builder.longitude;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+	
+	public static void showGeoByObj(Geo ...goose) {
+		for(Geo gg:goose) {
+			System.out.printf("latitude: %f, longitude: %f \n", gg.getLatitude(), gg.getLongitude());
+		}
+	}
+	
+}
